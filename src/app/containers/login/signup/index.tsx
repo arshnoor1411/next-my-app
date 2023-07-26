@@ -1,4 +1,3 @@
-"use client";
 // import { zodResolver } from '@hookform/resolvers/zod'
 // import Anchor from 'components/Anchor'
 // import Button from 'components/Button'
@@ -9,31 +8,31 @@
 // import { SignInSchema } from 'core/validations'
 // import { useEffect } from 'react'
 // import { useForm } from 'react-hook-form'
-import { useForm } from "react-hook-form";
 import PhoneInput, { CountryData } from "react-phone-input-2";
 
 // interface Props {
 //   client: ClientInfo
 // }
 
-interface IFormInputs {
-  phone: string;
-  password: string;
-}
+// interface IFormInputs {
+//   phone: string
+//   password: string
+// }
 
-const LoginContainer = () => {
+const SignUpContainer = () => {
   //const { client } = props
   // const { id, clientID, redirectURL } = client
 
-  const {
-    register,
-    setValue,
-    setError,
-    clearErrors,
-    formState: { errors, isValid },
-  } = useForm<IFormInputs>({
-    mode: "onChange",
-  });
+  //   const {
+  //     register,
+  //     setValue,
+  //     setError,
+  //     clearErrors,
+  //     formState: { errors, isValid },
+  //   } = useForm<IFormInputs>({
+  //     resolver: zodResolver(SignInSchema),
+  //     mode: 'onChange',
+  //   })
 
   //   useEffect(() => {
   //     setError('phone', { message: 'Required' })
@@ -43,16 +42,12 @@ const LoginContainer = () => {
     <>
       <form>
         <label>
-          <span>Name</span>
-          <input type="text"></input>
-        </label>
-        <br></br>
-        <label>
+          <span>Phone Number</span>
           <input type="hidden"></input>
           <PhoneInput
-            country={"in"}
+            country={"us"}
             //value={this.state.phone}
-            //onChange={(phone) => this.setState({ phone })}
+            //onChange={phone => this.setState({ phone })}
           />
         </label>
         <div className="mb-5 -mt-2 text-right">
@@ -63,10 +58,10 @@ const LoginContainer = () => {
             Forgot Password ?
           </a>
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign In</button>
       </form>
     </>
   );
 };
 
-export default LoginContainer;
+export default SignUpContainer;
